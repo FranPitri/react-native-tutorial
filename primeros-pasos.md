@@ -43,5 +43,7 @@ Expo generará un servidor local con nuestra aplicación, y podremos acceder al 
 
 ![](/assets/qr.png)
 
+Al escanearlo podremos abrir la app y observar el contenido de `App.js`!
 
+![](/assets/mobile-1.jpg)
 
