@@ -1,3 +1,10 @@
-# My Awesome Book
+# Tutorial React native
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+Este es un tutorial realizado a modo de ejercicio práctico para la materia Aplicación de las Nuevas Tecnologías del colegio Villada. A lo largo del mismo desarrollaremos una aplicación que nos permitirá aprender los conceptos claves de React Native, y nos ayudará a entender su funcionamiento.
+
+**Año** 2017.
+
+**Profesor** Javier Guignard
+
+**Alumno** Francisco Pitriqueo
+
