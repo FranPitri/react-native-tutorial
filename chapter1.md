@@ -11,6 +11,12 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
+Luego, para tener acceso a los paquetes que instalemos globalmente, vamos a tener que configurar la variable de entorno en el `PATH`
+
+En tu archivo de perfil \(probablemente `.bashrc`\) vamos a agregar la siguiente línea
+
+`export PATH="$PATH:$HOME/.yarn/bin"`
+
 ### Yarn
 
 El gestor de paquetes por defecto de node es **npm**, sin embargo Facebook recomienda utilizar **yarn**, su nuevo gestor de dependencias node.
