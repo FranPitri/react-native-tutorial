@@ -18,14 +18,11 @@ Dentro de `PokeList` generaremos un componente, pero utilizaremos una sintaxis n
 import React from 'react'
 import { FlatList } from 'react-native'
 
-const PokeList = () => {
-  return (
+const PokeList = () => (
     <FlatList />
-  )
-}
+)
 
 export default PokeList
-
 ```
 
 `FlatList` va a requerir unos cuantos datos para renderizar una lista, y nosotros vamos a encontrar la forma de pasaselos a nuestro `PokeList` a través de `PokeContainer` \(recuerden que estos datos ya estan ubicados en el state del mismo\)
