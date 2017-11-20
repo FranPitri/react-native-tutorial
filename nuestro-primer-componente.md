@@ -39,9 +39,64 @@ Los componentes del tipo `container` son creados con la sintaxis de clases, de J
 
 Como verán solo implementamos un método `render`. Éste es el único método necesario para crear un componente.
 
-Habrán notado que dentro de `render` utilizamos una sintaxis muy similar a html, sin embargo esta es llamada JSX, la cual, si bien no es necesaria, es la forma más conveniente de escribir en React.
+Habrán notado que dentro de `render` utilizamos una sintaxis muy similar a html, sin embargo ésta es llamada JSX, la cual, si bien no es necesaria, es la forma más conveniente de escribir en React.
 
 Dentro de éste colocamos una `View`, esto sería el equivalente a un `div` en html, un mero contenedor.
 
-Por ahora vamos a poner algo de texto dentro de nuestro componente, y lo vamos a ubicar en el punto principal de nuestra aplicación \(`App.js`\) para poder visualizarlo en nuestro dispositivo. Para ello agregaremos lo siguiente
+Por ahora vamos a poner algo de texto dentro de nuestro componente, y lo vamos a ubicar en el punto principal de nuestra aplicación \(`App.js`\) para poder visualizarlo en nuestro dispositivo. Para ello agregaremos lo siguiente:
+
+```js
+//PokeContainer.js
+
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+
+export default class PokeContainer extends Component {
+  
+    render() {
+        return (
+            <View>
+                <Text>
+                    {'Este es nuestro PokeContainer!'}
+                </Text>
+            </View>
+        )
+    }
+
+}
+```
+
+E importaremos nuestro `PokeContainer` en `App.js`
+
+```js
+//App.js
+
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import PokeContainer from './src/containers/PokeContainer/PokeContainer'
+
+export default class App extends React.Component {
+  render() {
+    return (
+        <View style={styles.container}>
+            <PokeContainer />
+        </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})
+
+```
+
+Ahora nuestra aplicación nos mostrará el contenido de `PokeContainer`
+
+![](/assets/mobile-2.jpg)
 
