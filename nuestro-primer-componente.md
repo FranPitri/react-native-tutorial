@@ -52,7 +52,7 @@ import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 
 export default class PokeContainer extends Component {
-  
+
     render() {
         return (
             <View>
@@ -93,10 +93,59 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })
-
 ```
 
 Ahora nuestra aplicación nos mostrará el contenido de `PokeContainer`
 
 ![](/assets/mobile-2.jpg)
+
+Muy bien! Ahora vamos a hacer algo un poco mas interesante.
+
+### Manejando State
+
+El `state` es un objeto que podemos definir en todos los componentes del tipo `container`. Podemos pensarlo como un objeto que define los atributos del componente. En el se guardan datos que luego se utilizaran en el container, o sus componentes interiores.
+
+Vamos a agregarle `state` a nuestro `PokeContainer`
+
+
+
+```js
+//PokeContainer.js
+
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+
+export default class PokeContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            pokemons: []
+        }
+    }
+    
+    render() {
+        return (
+            <View>
+                <Text>
+                    {'Este es nuestro PokeContainer!'}
+                </Text>
+            </View>
+        )
+    }
+
+}
+```
+
+En el `constructor` de nuestro container definimos que su `state` va a poseer un atributo pokemons, que por default va a corresponder a un array vacío. Ahora nuestro container va a poder retener datos!
+
+> Pero..pero..yo quiero ver pokemons!
+
+Un reclamo tan válido como cualquier otro. Vamos a ver como podemos lograr esto introduciendo un nuevo termino.
+
+### Lifecycle Methods
+
+
+
+
 
