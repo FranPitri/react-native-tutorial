@@ -107,8 +107,6 @@ El `state` es un objeto que podemos definir en todos los componentes del tipo `c
 
 Vamos a agregarle `state` a nuestro `PokeContainer`
 
-
-
 ```js
 //PokeContainer.js
 
@@ -123,7 +121,7 @@ export default class PokeContainer extends Component {
             pokemons: []
         }
     }
-    
+
     render() {
         return (
             <View>
@@ -139,13 +137,57 @@ export default class PokeContainer extends Component {
 
 En el `constructor` de nuestro container definimos que su `state` va a poseer un atributo pokemons, que por default va a corresponder a un array vacío. Ahora nuestro container va a poder retener datos!
 
-> Pero..pero..yo quiero ver pokemons!
+> Pero..pero..yo quiero ver Pokémons!
 
-Un reclamo tan válido como cualquier otro. Vamos a ver como podemos lograr esto introduciendo un nuevo termino.
+Un reclamo tan válido como cualquier otro. Vamos a ver como podemos lograr esto introduciendo un nuevo concepto.
 
 ### Lifecycle Methods
 
+Los `Lifecycle Methods` son métodos que se van a disparar segun ocurran distintos eventos en un componente. Existen muchos de ellos, y todos son útiles para distintos casos de uso. Para nuestro propósito nos vamos a aprovechar del método `ComponentWillMount` para traer los datos de los Pokémons tan pronto como nuestro componente se monte en la aplicación.
 
+Vamos a agregar la lógica de nuestro fetch dentro del método `ComponentWillMount` en `PokeContainer`:
 
+```js
+//PokeContainer.js
 
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+
+export default class PokeContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            pokemons: []
+        }
+    }
+
+    componentWillMount() {
+        fetch('http://pokeapi.co/api/v2/pokemon/?limit=20').then((response) => (
+            response.json()
+        ).then((data) => {
+            this.setState({pokemons: data.results})
+        }))
+    }
+  
+    render() {
+        return (
+            <View>
+                <Text>
+                    {'Este es nuestro PokeContainer!'}
+                </Text>
+            </View>
+        )
+    }
+
+}
+```
+
+Luego de fetchear los Pokémons desde la API, utilizamos el método `setState` para asignar estos nuevos valores al atributo **pokemons** del state.
+
+Posteriormente, si printeamos el `state` se verá así:
+
+![](/assets/state.png)
+
+Wuu, nuestro `state` está lleno de Pokémons [🎉](http://graphemica.com/%F0%9F%8E%89)
 
