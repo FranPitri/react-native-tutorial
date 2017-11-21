@@ -25,5 +25,5 @@ const PokeList = () => (
 export default PokeList
 ```
 
-`FlatList` va a requerir unos cuantos datos para renderizar una lista, y nosotros vamos a encontrar la forma de pasaselos a nuestro `PokeList` a través de `PokeContainer` \(recuerden que estos datos ya estan ubicados en el state del mismo\)
+`FlatList` va a requerir unos cuantos datos para renderizar una lista, y nosotros vamos a encontrar la forma de pasaselos a nuestro `PokeList` a través de `PokeContainer` \(recuerden que estos datos ya estan ubicados en su state\)
 
