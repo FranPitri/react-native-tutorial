@@ -25,7 +25,13 @@ const PokeList = () => (
 export default PokeList
 ```
 
-`FlatList` va a requerir unos cuantos datos para renderizar una lista, y nosotros vamos a encontrar la forma de pasaselos a nuestro `PokeList` a través de `PokeContainer` \(recuerden que estos datos ya estan disponibles en su state\)
+`FlatList` va a requerir unos cuantos datos para renderizar una lista, y nosotros vamos a encontrar la forma de pasaselos a nuestro `PokeList` a través de `PokeContainer` \(recuerden que estos datos ya estan disponibles en su state\).
+
+Antes que nada, ¿Qué necesitamos en nuestra `FlatList`?
+
+* La propiedad **data **recibe un array de objetos, los cuales seran renderizados posterirmente en nuestra lista.
+* La propiedad **renderItem** recibe una función que definirá cómo serán nuestros items. En esencia, esto es un componente presentacional.
+* La propiedad **keyExtractor **definirá un valor único que se asignará a cada item para identificarlo.
 
 
 
