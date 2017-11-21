@@ -48,7 +48,7 @@ export default class PokeContainer extends Component {
             this.setState({pokemons: data.results}, () => console.log(this.state))
         }))
     }
-  
+
     render() {
         return (
             <View style={styles.container}>
@@ -59,6 +59,72 @@ export default class PokeContainer extends Component {
 
 }
 ```
+
+Esto centrará nuestra lista. Ahora vamos con los estilos de la lista y sus items!
+
+```js
+//PokeList/styles.js
+
+import { StyleSheet } from 'react-native'
+
+const styles = StyleSheet.create({
+    list: {
+        width: '100%',
+    },
+    item: {
+        paddingTop: 20,
+        paddingBottom: 20,
+        marginTop: 25,
+        marginBottom: 20,
+        marginLeft: 10,
+        marginRight: 10,
+        borderRadius: 2,
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#212121',
+        elevation: 3
+    },
+    itemText: {
+        fontWeight: '900',
+        fontSize: 15,
+        color: '#fff'
+    }
+})
+  
+export { styles as default }
+```
+
+```js
+//PokeList.js
+
+import React from 'react'
+import {View, Text, FlatList} from 'react-native'
+import styles from './styles'
+
+const _renderItem = ({item}) => (
+    <View style={styles.item}>
+        <Text style={styles.itemText}>{item.name.toUpperCase()}</Text>
+    </View>
+)
+
+const _keyExtractor = (item) => `pokemon-${item.name}`
+
+const PokeList = ({data}) => (
+    <FlatList 
+        renderItem={_renderItem}
+        keyExtractor={_keyExtractor}
+        data={data}
+        style={styles.list}
+    />
+)
+
+
+export default PokeList
+```
+
+Podemos jugar con el estilo a gusto hasta tener los items que deseemos! Esto es una de las grandes ventajas de React Native, escribir estilos es muy facil e intiutivo!
+
+Éste es el resultado final de nuestros PokeItems
 
 
 
