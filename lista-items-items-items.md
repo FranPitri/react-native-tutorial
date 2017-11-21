@@ -60,5 +60,44 @@ const PokeList = ({data}) => (
 export default PokeList
 ```
 
+Así mismo, vamos a ubicar nuestra PokeList en PokeContainer, y le vamos a proporcionar nuestros pokemons como propiedad **data**
+
+```js
+//PokeContainer.js
+
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import PokeList from '../../components/PokeList/PokeList'
+
+export default class PokeContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            pokemons: []
+        }
+    }
+
+    componentWillMount() {
+        fetch('http://pokeapi.co/api/v2/pokemon/?limit=20').then((response) => (
+            response.json()
+        ).then((data) => {
+            this.setState({pokemons: data.results}, () => console.log(this.state))
+        }))
+    }
+  
+    render() {
+        return (
+            <View>
+                <PokeList data={this.state.pokemons} />
+            </View>
+        )
+    }
+
+}
+```
+
+
+
 
 
