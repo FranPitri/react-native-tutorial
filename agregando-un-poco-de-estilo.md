@@ -20,8 +20,44 @@ const styles = StyleSheet.create({
         width: '100%',
     },
 })
-  
+
 export { styles as default }
+```
+
+```js
+//PokeContainer.js
+
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
+import PokeList from '../../components/PokeList/PokeList'
+import styles from './styles'
+
+export default class PokeContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            pokemons: []
+        }
+    }
+
+    componentWillMount() {
+        fetch('http://pokeapi.co/api/v2/pokemon/?limit=20').then((response) => (
+            response.json()
+        ).then((data) => {
+            this.setState({pokemons: data.results}, () => console.log(this.state))
+        }))
+    }
+  
+    render() {
+        return (
+            <View style={styles.container}>
+                <PokeList data={this.state.pokemons} />
+            </View>
+        )
+    }
+
+}
 ```
 
 
