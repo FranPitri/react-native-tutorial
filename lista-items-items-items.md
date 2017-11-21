@@ -33,7 +33,32 @@ Antes que nada, ¿Qué necesitamos en nuestra `FlatList`?
 * La propiedad **renderItem** recibe una función que definirá cómo serán nuestros items. En esencia, esto es un componente presentacional.
 * La propiedad **keyExtractor **definirá un valor único que se asignará a cada item para identificarlo.
 
+Vamos a escribir estas últimas dos funciones de manera básica, además vamos a recibir una propieda **data** en nuestra `PokeList` y se la vamos a asignar a nuestra `FlatList`
 
+```js
+//PokeList.js
+
+import React from 'react'
+import {View, Text, FlatList} from 'react-native'
+
+const _renderItem = ({item}) => (
+    <View >
+        <Text>{item.name}</Text>
+    </View>
+)
+
+const _keyExtractor = (item) => `pokemon-${item.name}`
+
+const PokeList = ({data}) => (
+    <FlatList 
+        renderItem={_renderItem}
+        keyExtractor={_keyExtractor}
+        data={data}
+    />
+)
+
+export default PokeList
+```
 
 
 
