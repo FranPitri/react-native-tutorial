@@ -101,5 +101,7 @@ Ahora nuestra app se ve así:
 
 ![](/assets/mobile-3.jpg)
 
-Elegancia? **0** Funcionalidad?  **420%**
+> Elegancia? **0** Funcionalidad?  69**⁴²⁰%**
+
+
 
