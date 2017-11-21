@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         color: '#fff'
     }
 })
-  
+
 export { styles as default }
 ```
 
@@ -124,9 +124,7 @@ export default PokeList
 
 Podemos jugar con el estilo a gusto hasta tener los items que deseemos! Esto es una de las grandes ventajas de React Native, escribir estilos es muy facil e intiutivo!
 
-Éste es el resultado final de nuestros PokeItems
-
-
+Éste es el resultado final de nuestros PokeItems [🎉](http://graphemica.com/🎉)![](/assets/mobile-4.jpg)
 
 
 
