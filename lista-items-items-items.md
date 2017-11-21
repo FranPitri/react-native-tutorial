@@ -85,7 +85,7 @@ export default class PokeContainer extends Component {
             this.setState({pokemons: data.results}, () => console.log(this.state))
         }))
     }
-  
+
     render() {
         return (
             <View>
@@ -96,8 +96,6 @@ export default class PokeContainer extends Component {
 
 }
 ```
-
-
 
 
 
