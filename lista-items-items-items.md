@@ -97,5 +97,9 @@ export default class PokeContainer extends Component {
 }
 ```
 
+Ahora nuestra app se ve así:
 
+![](/assets/mobile-3.jpg)
+
+Elegancia? **0** Funcionalidad?  **420%**
 
